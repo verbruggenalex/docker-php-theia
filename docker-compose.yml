@@ -1,0 +1,12 @@
+version: '3'
+services:
+  web:
+    working_dir: ${PWD}
+    image: theia
+    ports:
+      - 80:80
+      - 3000:3000
+    environment:
+      APACHE_DOCUMENT_ROOT: ${PWD}
+    volumes:
+      - ${PWD}:${PWD}
