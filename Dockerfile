@@ -8,26 +8,17 @@ ENV APACHE_DOCUMENT_ROOT=/var/www/html
 USER root
 
 RUN apt-get update && \
-    apt-get install -y make gcc g++ python --no-install-recommends
+    apt-get install -y make gcc g++ python wget --no-install-recommends
 
 USER docker
 
 WORKDIR /home/docker
 
-ADD latest.package.json ./package.json
+ADD --chown=docker:docker package.json ./package.json
+ADD --chown=docker:docker .wakatime.cfg ./.wakatime.cfg
+ADD --chown=docker:docker plugins /home/docker/plugins
 
 ARG GITHUB_TOKEN
-
-RUN yarn --pure-lockfile && \
-    NODE_OPTIONS="--max_old_space_size=4096" yarn theia build && \
-    yarn theia download:plugins && \
-    yarn --production && \
-    yarn autoclean --init && \
-    echo *.ts >> .yarnclean && \
-    echo *.ts.map >> .yarnclean && \
-    echo *.spec.* >> .yarnclean && \
-    yarn autoclean --force && \
-    yarn cache clean
 
 ENV HOME=/home/docker \
     THEIA_DEFAULT_PLUGINS=local-dir:/home/docker/plugins \
@@ -40,6 +31,18 @@ ENV HOME=/home/docker \
     PHP_INI_ERROR_REPORTING=E_ALL \
     PHP_INI_MEMORY_LIMIT=2g
 
+RUN yarn --pure-lockfile && \
+    NODE_OPTIONS="--max_old_space_size=4096" yarn theia build && \
+    yarn theia download:plugins && \
+    yarn --production && \
+    yarn autoclean --init && \
+    echo *.ts >> .yarnclean && \
+    echo *.ts.map >> .yarnclean && \
+    echo *.spec.* >> .yarnclean && \
+    yarn autoclean --force && \
+    yarn cache clean \
+    wget https://raw.githubusercontent.com/theia-ide/theia-apps/master/theia-electron/resources/icon.ico -P ./lib/ && sed -i 's/<meta charset/<link rel="icon" href=".\/icon.ico" type="image\/x-icon">\n  <meta charset=/' ./lib/index.html
+
 RUN mkdir -p .theia/plugins && \
     mkdir -p .theia/extensions
 
@@ -47,5 +50,5 @@ COPY --chown=docker:docker ./settings.json /home/docker/.theia/settings.json
 
 EXPOSE 3000
 
-ENV STARTUP_COMMAND_THEIA_1="node /home/docker/src-gen/backend/main.js \$PWD --app-project-path=/home/docker --hostname=0.0.0.0 &"
-#ENV STARTUP_COMMAND_THEIA_1="yarn start \$PWD --hostname 0.0.0.0 --port 3000 --root-dir /home/theia &"
+ENV STARTUP_COMMAND_THEIA_1='sed -i "s/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXX/$WAKATIME_API_KEY/g"  /home/docker/.wakatime.cfg'
+ENV STARTUP_COMMAND_THEIA_2="node /home/docker/src-gen/backend/main.js \$PWD --app-project-path=/home/docker --hostname=0.0.0.0 &"

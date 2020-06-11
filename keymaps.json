@@ -1,0 +1,10 @@
+[
+    {
+        "command": "core.undo",
+        "keybinding": "ctrl+z"
+    },
+    {
+        "command": "-core.undo",
+        "keybinding": "ctrlcmd+z"
+    }
+]
