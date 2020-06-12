@@ -11,3 +11,4 @@ services:
       WAKATIME_API_KEY:
     volumes:
       - ${PWD}:${PWD}
+      - ${HOME}/.gitconfig:/home/docker/.gitconfig

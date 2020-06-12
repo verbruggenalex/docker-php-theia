@@ -50,5 +50,7 @@ COPY --chown=docker:docker ./settings.json /home/docker/.theia/settings.json
 
 EXPOSE 3000
 
-ENV STARTUP_COMMAND_THEIA_1='sed -i "s/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXX/$WAKATIME_API_KEY/g"  /home/docker/.wakatime.cfg'
-ENV STARTUP_COMMAND_THEIA_2="node /home/docker/src-gen/backend/main.js \$PWD --app-project-path=/home/docker --hostname=0.0.0.0 &"
+ENV STARTUP_COMMAND_THEIA_1='[ -z "$GIT_USER_NAME" ] || git config --global user.name "$GIT_USER_NAME"'
+ENV STARTUP_COMMAND_THEIA_2='[ -z "$GIT_USER_EMAIL" ] || git config --global user.email "$GIT_USER_EMAIL"'
+ENV STARTUP_COMMAND_THEIA_3='sed -i "s/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXX/$WAKATIME_API_KEY/g"  /home/docker/.wakatime.cfg'
+ENV STARTUP_COMMAND_THEIA_4="node /home/docker/src-gen/backend/main.js \$PWD --app-project-path=/home/docker --hostname=0.0.0.0 &"
