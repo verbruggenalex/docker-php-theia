@@ -35,6 +35,7 @@
     80
   ],
   "files.associations": {
+    "*.info": "ini",
     "*.inc": "php",
     "*.module": "php",
     "*.install": "php",
@@ -42,14 +43,17 @@
     "*.tpl.php": "php",
     "*.test": "php",
     "*.php": "php",
-    "*.info": "ini"
+    "*.html": "twig"
   },
-  "files.trimTrailingWhitespace": true,
-  "files.insertFinalNewline": true,
+  "emmet.includeLanguages": {
+    "twig": "html"
+  },
   "html.format.enable": true,
   "html.format.wrapLineLength": 80,
-  /* Empty Indent */
   "emptyIndent.removeIndent": true,
   "emptyIndent.highlightIndent": false,
-  "emptyIndent.highlightColor": "rgba(246,36,89,0.6)"
+  "emptyIndent.highlightColor": "rgba(246,36,89,0.6)",
+  "emptyIndent.exclude": [
+    ".md"
+  ]
 }

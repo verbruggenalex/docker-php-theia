@@ -1,5 +1,3 @@
 <?php
 
-phpinfo();
-
-      $var = 'Stupid';
+$var = 'Stupid';
