@@ -1,3 +1,7 @@
 <?php
 
+/**
+ * @file
+ */
+
 $var = 'Stupid';

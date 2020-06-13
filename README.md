@@ -5,8 +5,10 @@
 - https://marketplace.visualstudio.com/items?itemName=DmitryDorofeev.empty-indent
 - https://marketplace.visualstudio.com/items?itemName=kaffeine.advanced-drupal-8-snippets
 - https://marketplace.visualstudio.com/items?itemName=mblode.twig-language-2
-- https://marketplace.visualstudio.com/items?itemName=ValeryanM.vscode-phpsab
+- https://marketplace.visualstudio.com/items?itemName=ValeryanM.vscode-phpsab *
 - https://marketplace.visualstudio.com/items?itemName=WakaTime.vscode-wakatime
+
+\* Issue with phpsab where phpcbf does not work correctly. Needs cli execution.
 
 
 ## VS Code configuration documentation:

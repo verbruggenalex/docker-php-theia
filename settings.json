@@ -55,5 +55,11 @@
   "emptyIndent.highlightColor": "rgba(246,36,89,0.6)",
   "emptyIndent.exclude": [
     ".md"
-  ]
+  ],
+  "phpsab.snifferShowSources": true,
+  "phpsab.fixerEnable": true,
+  "phpsab.snifferEnable": true,
+  "editor.formatOnSaveTimeout": 2000,
+  "workbench.iconTheme": "theia-file-icons",
+  "phpsab.debug": true
 }
