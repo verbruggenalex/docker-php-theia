@@ -14,3 +14,4 @@ services:
       WAKATIME_API_KEY:
     volumes:
       - ${PWD}:${PWD}
+      - ~/.ssh:/home/web/.ssh

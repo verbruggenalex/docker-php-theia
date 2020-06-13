@@ -1,7 +1,7 @@
 # The PHP_EXTENSIONS ARG will apply to the "slim" image
 ARG PHP_EXTENSIONS="apcu mysqli opcache pdo_mysql zip soap"
 
-FROM thecodingmachine/php:7.4-v3-apache-node10
+FROM thecodingmachine/php:7.3-v3-apache-node10
 
 ENV APACHE_DOCUMENT_ROOT=/var/www/html
 
