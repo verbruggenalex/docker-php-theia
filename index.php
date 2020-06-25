@@ -4,4 +4,4 @@
  * @file
  */
 
-$var = 'Stupid';
+testingIndexing();

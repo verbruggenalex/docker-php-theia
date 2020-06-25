@@ -14,4 +14,15 @@ services:
       WAKATIME_API_KEY:
     volumes:
       - ${PWD}:${PWD}
-      - ~/.ssh:/home/web/.ssh
+      - ~/.ssh:/home/docker/.ssh
+  mysql:
+    image: mysql:5.7
+    environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+      - MYSQL_DATABASE=drupal
+    volumes:
+      - mysql:/var/lib/mysql
+volumes:
+  mysql:
+
+

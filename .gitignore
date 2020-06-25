@@ -1,4 +1,5 @@
 /vendor/
 /web/
+/vscode-intelephense/
 /.editorconfig
 /.gitattributes

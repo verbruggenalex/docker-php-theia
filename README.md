@@ -18,3 +18,11 @@ https://www.drupal.org/docs/develop/development-tools/configuring-visual-studio-
 ### Breadcrumb (not available for Theia):
 
 https://github.com/eclipse-theia/theia/pull/6371
+
+## TODO's:
+
+- add behat extension?
+- add phpunit extension?
+- allow local settings.json to be loaded for .theia
+- interesting extensions: https://www.youtube.com/watch?v=c5GAS_PMXDs
+- check out ssh: https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh
