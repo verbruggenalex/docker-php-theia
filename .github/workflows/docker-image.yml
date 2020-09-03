@@ -5,12 +5,11 @@ on:
     branches:
       - master
 
-  env:
-    IMAGE_NAME: docker-theia-php
-
 jobs:
   push:
     runs-on: ubuntu-latest
+    env:
+      IMAGE_NAME: docker-theia-php
 
     steps:
       - name: Checkout repository
