@@ -12,13 +12,11 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
-    - name: Build Docker image
-      run: docker build . --file Dockerfile --tag verbral/docker-theia-php:latest
-    - name: Push to Docker Hub
+    - name: Build and push to Docker Hub
       uses: docker/build-push-action@v1
       with:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
         repository: verbral/docker-theia-php
-        tag_with_ref: false
+        tags: latest
 
