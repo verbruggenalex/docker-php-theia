@@ -1,6 +1,13 @@
-# Theia PHP / Drupal docker image.
+# Docker Theia PHP
 
-## Custom plugins vsix files manually downloaded:
+A Docker image based on [thecodingmachine/docker-images-php](https://github.com/thecodingmachine/docker-images-php#general-purpose-php-images-for-docker)
+with addition of the browser based IDE [Theia](https://theia-ide.org/) set up
+for coding PHP. **This is not an official docker image!** Subject to change as
+it is used for personal development purposes.
+
+## Notes
+
+### Custom plugins vsix files manually downloaded:
 
 - https://marketplace.visualstudio.com/items?itemName=DmitryDorofeev.empty-indent
 - https://marketplace.visualstudio.com/items?itemName=kaffeine.advanced-drupal-8-snippets
@@ -11,15 +18,15 @@
 \* Issue with phpsab where phpcbf does not work correctly. Needs cli execution.
 
 
-## VS Code configuration documentation:
+### VS Code configuration documentation:
 
 https://www.drupal.org/docs/develop/development-tools/configuring-visual-studio-code
 
-### Breadcrumb (not available for Theia):
+#### Breadcrumb (not available for Theia):
 
 https://github.com/eclipse-theia/theia/pull/6371
 
-## TODO's:
+### TODO's:
 
 - add behat extension?
 - add phpunit extension?
