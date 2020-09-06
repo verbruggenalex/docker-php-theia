@@ -40,11 +40,8 @@ RUN yarn --pure-lockfile && \
     echo *.ts.map >> .yarnclean && \
     echo *.spec.* >> .yarnclean && \
     yarn autoclean --force && \
-    yarn cache clean \
+    yarn cache clean && \
     wget https://raw.githubusercontent.com/theia-ide/theia-apps/master/theia-electron/resources/icon.ico -P ./lib/ && sed -i 's/<meta charset/<link rel="icon" href=".\/icon.ico" type="image\/x-icon">\n  <meta charset=/' ./lib/index.html
-
-RUN mkdir -p .theia/plugins && \
-    mkdir -p .theia/extensions
 
 COPY --chown=docker:docker ./settings.json /home/docker/.theia/settings.json
 
