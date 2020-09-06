@@ -14,7 +14,6 @@ services:
       WAKATIME_API_KEY:
     volumes:
       - ${PWD}:${PWD}
-      - ./plugins:/plugins
       - ~/.ssh:/home/docker/.ssh
   mysql:
     image: mysql:5.7

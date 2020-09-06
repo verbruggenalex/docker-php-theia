@@ -9,7 +9,7 @@ it is used for personal development purposes.
 
 Setup a docker-compose.yml file and run `docker-compose up -d`:
 
-```
+```yaml
 version: '3'
 services:
   web:
@@ -30,8 +30,6 @@ services:
     volumes:
       # Mount path as is for xdebug.
       - ${PWD}:${PWD}
-      # Mount a folder with additional plugins for theia.
-      - ./plugins:/plugins
       # Mount your SSH folder for git purposes.
       - ~/.ssh:/home/docker/.ssh
 ```

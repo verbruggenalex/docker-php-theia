@@ -51,19 +51,5 @@
   "html.format.enable": true,
   "html.format.wrapLineLength": 80,
   "editor.formatOnSaveTimeout": 2000,
-  "workbench.iconTheme": "theia-file-icons",
-  "intelephense.environment.documentRoot": "/home/verbral/verbruggenalex/theia/web",
-  "intelephense.environment.phpVersion": "7.3.19",
-  "intelephense.files.exclude": [
-    "**/.git/**",
-    "**/.svn/**",
-    "**/.hg/**",
-    "**/CVS/**",
-    "**/.DS_Store/**",
-    "**/node_modules/**",
-    "**/bower_components/**",
-    "**/vendor/**/{Tests,tests}/**",
-    "**/.history/**",
-    "**/sites/**/files/**"
-  ]
+  "workbench.iconTheme": "theia-file-icons"
 }
