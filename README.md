@@ -5,31 +5,35 @@ with addition of the browser based IDE [Theia](https://theia-ide.org/) set up
 for coding PHP. **This is not an official docker image!** Subject to change as
 it is used for personal development purposes.
 
-## Notes
+## Usage:
 
-### Custom plugins vsix files manually downloaded:
+Setup a docker-compose.yml file and run `docker-compose up -d`:
 
-- https://marketplace.visualstudio.com/items?itemName=DmitryDorofeev.empty-indent
-- https://marketplace.visualstudio.com/items?itemName=kaffeine.advanced-drupal-8-snippets
-- https://marketplace.visualstudio.com/items?itemName=mblode.twig-language-2
-- https://marketplace.visualstudio.com/items?itemName=ValeryanM.vscode-phpsab *
-- https://marketplace.visualstudio.com/items?itemName=WakaTime.vscode-wakatime
-
-\* Issue with phpsab where phpcbf does not work correctly. Needs cli execution.
-
-
-### VS Code configuration documentation:
-
-https://www.drupal.org/docs/develop/development-tools/configuring-visual-studio-code
-
-#### Breadcrumb (not available for Theia):
-
-https://github.com/eclipse-theia/theia/pull/6371
-
-### TODO's:
-
-- add behat extension?
-- add phpunit extension?
-- allow local settings.json to be loaded for .theia
-- interesting extensions: https://www.youtube.com/watch?v=c5GAS_PMXDs
-- check out ssh: https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh
+```
+version: '3'
+services:
+  web:
+    image: verbral/docker-theia-php
+    working_dir: ${PWD}
+    ports:
+      - 80:80
+      - 3000:3000
+    environment:
+      APACHE_DOCUMENT_ROOT: ${PWD}
+      # Set your Git user and name for commit purposes.
+      GIT_USER_NAME:
+      GIT_USER_EMAIL:
+      # Set your Github API token for Composer usage.
+      GITHUB_API_TOKEN:
+      # Set your Wakatime API key if you use the plugin.
+      WAKATIME_API_KEY:
+    volumes:
+      # Mount path as is for xdebug.
+      - ${PWD}:${PWD}
+      # Mount a folder with additional plugins for theia.
+      - ./plugins:/plugins
+      # Mount your SSH folder for git purposes.
+      - ~/.ssh:/home/docker/.ssh
+```
+After this your application will be available on port 80 and your IDE will be
+available on port 3000.

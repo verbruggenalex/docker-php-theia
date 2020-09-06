@@ -21,7 +21,7 @@ ADD --chown=docker:docker plugins /home/docker/plugins
 ARG GITHUB_TOKEN
 
 ENV HOME=/home/docker \
-    THEIA_DEFAULT_PLUGINS=local-dir:/home/docker/plugins \
+    THEIA_DEFAULT_PLUGINS=local-dir:/plugins \
     SHELL=/bin/bash \
     USE_LOCAL_GIT=true \
     PHP_EXTENSION_XDEBUG=1 \

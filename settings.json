@@ -50,18 +50,8 @@
   },
   "html.format.enable": true,
   "html.format.wrapLineLength": 80,
-  "emptyIndent.removeIndent": true,
-  "emptyIndent.highlightIndent": false,
-  "emptyIndent.highlightColor": "rgba(246,36,89,0.6)",
-  "emptyIndent.exclude": [
-    ".md"
-  ],
-  "phpsab.snifferShowSources": true,
-  "phpsab.fixerEnable": true,
-  "phpsab.snifferEnable": true,
   "editor.formatOnSaveTimeout": 2000,
   "workbench.iconTheme": "theia-file-icons",
-  "phpsab.debug": true,
   "intelephense.environment.documentRoot": "/home/verbral/verbruggenalex/theia/web",
   "intelephense.environment.phpVersion": "7.3.19",
   "intelephense.files.exclude": [
