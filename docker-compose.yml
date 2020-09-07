@@ -2,7 +2,10 @@ version: '3'
 services:
   web:
     working_dir: ${PWD}
-    build: .
+    build:
+      context: .
+      args:
+        PHP_VERSION: ${PHP_VERSION:-7.4}
     ports:
       - 80:80
       - 3000:3000

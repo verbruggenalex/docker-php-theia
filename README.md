@@ -15,14 +15,14 @@ it is used for personal development purposes.
 
 ## Versions
 
-From Dockerhub
+### From Dockerhub
 ```bash
 docker pull docker.io/verbral/docker-theia-php:7.2
 docker pull docker.io/verbral/docker-theia-php:7.3
 docker pull docker.io/verbral/docker-theia-php:7.4
 ```
 
-From Github
+### From Github
 ```bash
 docker pull docker.pkg.github.com/verbruggenalex/docker-theia-php/docker-theia-php:7.2
 docker pull docker.pkg.github.com/verbruggenalex/docker-theia-php/docker-theia-php:7.3
@@ -66,3 +66,11 @@ docker-compose up -d
 
 After this your application will be available on port 80 and your IDE will be
 available on port 3000.
+
+## Development
+
+```
+git clone git@github.com:verbruggenalex/docker-theia-php.git
+cd docker-theia-php
+PHP_VERSION=7.4 docker-compose up -d --build
+```
