@@ -1,11 +1,11 @@
-![example workflow name](https://github.com/verbruggenalex/docker-theia-php/workflows/Docker%20Image%20CI/badge.svg)
+![example workflow name](https://github.com/actions/verbruggenalex/docker-theia-php/.github/workflows/docker-image.yml/badge.svg)
 ![GitHub last commit](https://img.shields.io/github/last-commit/verbruggenalex/docker-theia-php)
 ![Docker Image Size](https://img.shields.io/docker/image-size/verbral/docker-theia-php)
 ![Docker Pulls](https://img.shields.io/docker/pulls/verbral/docker-theia-php)
 
 # Docker Theia PHP
 
-<img align="left" src="/theia-screenshot.png" alt="Theia"	title="Theia" width="100%" /><br>
+![Theia](/theia-screenshot.png)
 
 ## About
 
@@ -13,6 +13,14 @@ A Docker image based on [thecodingmachine/docker-images-php](https://github.com/
 with addition of the browser based IDE [Theia](https://theia-ide.org/) set up
 for coding PHP. **This is not an official docker image!** Subject to change as
 it is used for personal development purposes.
+
+## Versions
+
+| Image name | Image size |
+| ---------- | ---------- |
+| verbral/docker-theia-php:7.2 | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/verbral/docker-theia-php/7.2) |
+| verbral/docker-theia-php:7.3 | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/verbral/docker-theia-php/7.3) |
+| verbral/docker-theia-php:7.4 | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/verbral/docker-theia-php/7.4) |
 
 ## Usage:
 
@@ -23,7 +31,7 @@ it is used for personal development purposes.
 version: '3'
 services:
   web:
-    image: verbral/docker-theia-php
+    image: verbral/docker-theia-php:7.4
     working_dir: ${PWD}
     ports:
       - 80:80

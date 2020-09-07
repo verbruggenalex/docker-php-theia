@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        php-version: [7.4]
+        php-version: [7.2, 7.3, 7.4]
     env:
       IMAGE_NAME: docker-theia-php
 
