@@ -1,3 +1,7 @@
+![example workflow name](https://github.com/verbruggenalex/docker-theia-php/workflows/Docker%20Image%20CI/badge.svg)
+![Docker Image Size](https://img.shields.io/docker/image-size/verbral/docker-theia-php)
+![Docker Pulls](https://img.shields.io/docker/pulls/verbral/docker-theia-php)
+
 # Docker Theia PHP
 
 A Docker image based on [thecodingmachine/docker-images-php](https://github.com/thecodingmachine/docker-images-php#general-purpose-php-images-for-docker)
