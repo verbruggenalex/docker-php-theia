@@ -5,6 +5,10 @@
 
 # Docker Theia PHP
 
+<img align="left" src="/theia-screenshot.png" alt="Theia"	title="Theia" width="100%" /><br>
+
+---
+
 A Docker image based on [thecodingmachine/docker-images-php](https://github.com/thecodingmachine/docker-images-php#general-purpose-php-images-for-docker)
 with addition of the browser based IDE [Theia](https://theia-ide.org/) set up
 for coding PHP. **This is not an official docker image!** Subject to change as
@@ -12,7 +16,8 @@ it is used for personal development purposes.
 
 ## Usage:
 
-Setup a docker-compose.yml file and run `docker-compose up -d`:
+<details>
+ <summary>Setup a docker-compose.yml file and run `docker-compose up -d`:</summary>
 
 ```yaml
 version: '3'
@@ -38,5 +43,7 @@ services:
       # Mount your SSH folder for git purposes.
       - ~/.ssh:/home/docker/.ssh
 ```
+</details>
+
 After this your application will be available on port 80 and your IDE will be
 available on port 3000.
