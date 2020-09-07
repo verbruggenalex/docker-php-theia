@@ -8,6 +8,9 @@ on:
 jobs:
   push:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php-version: [7.4]
     env:
       IMAGE_NAME: docker-theia-php
 
@@ -15,8 +18,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Build image
-        run: docker build . --file Dockerfile --tag image
+      - name: Build ${{ matrix.php-version }} image
+        run: docker build . --file Dockerfile --tag image --build-arg PHP_VERSION=${{ matrix.php-version }}
 
       - name: Log into registries
         run: |
@@ -26,11 +29,11 @@ jobs:
           echo "${{ secrets.GITHUB_TOKEN }}" | docker login docker.pkg.github.com -u verbruggenalex --password-stdin
 
 
-      - name: Push image to registries
+      - name: Push ${{ matrix.php-version }} image to registries
         run: |
           # Push to Dockerhub.
-          docker tag image docker.io/verbral/docker-theia-php:latest
-          docker push docker.io/verbral/docker-theia-php:latest
+          docker tag image docker.io/verbral/docker-theia-php:${{ matrix.php-version }}
+          docker push docker.io/verbral/docker-theia-php:${{ matrix.php-version }}
           # Push to Github.
-          docker tag image docker.pkg.github.com/verbruggenalex/docker-theia-php/docker-theia-php:latest
-          docker push docker.pkg.github.com/verbruggenalex/docker-theia-php/docker-theia-php:latest
+          docker tag image docker.pkg.github.com/verbruggenalex/docker-theia-php/docker-theia-php:${{ matrix.php-version }}
+          docker push docker.pkg.github.com/verbruggenalex/docker-theia-php/docker-theia-php:${{ matrix.php-version }}
