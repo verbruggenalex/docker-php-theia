@@ -15,11 +15,19 @@ it is used for personal development purposes.
 
 ## Versions
 
-| Image name | Image size |
-| ---------- | ---------- |
-| verbral/docker-theia-php:7.2 | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/verbral/docker-theia-php/7.2) |
-| verbral/docker-theia-php:7.3 | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/verbral/docker-theia-php/7.3) |
-| verbral/docker-theia-php:7.4 | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/verbral/docker-theia-php/7.4) |
+From Dockerhub
+```bash
+docker pull docker.io/verbral/docker-theia-php:7.2
+docker pull docker.io/verbral/docker-theia-php:7.3
+docker pull docker.io/verbral/docker-theia-php:7.4
+```
+
+From Github
+```bash
+docker pull docker.pkg.github.com/verbruggenalex/docker-theia-php/docker-theia-php:7.2
+docker pull docker.pkg.github.com/verbruggenalex/docker-theia-php/docker-theia-php:7.3
+docker pull docker.pkg.github.com/verbruggenalex/docker-theia-php/docker-theia-php:7.4
+```
 
 ## Usage:
 
