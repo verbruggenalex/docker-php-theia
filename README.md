@@ -1,10 +1,10 @@
 ![example workflow name](https://github.com/verbruggenalex/docker-php-theia/workflows/Docker%20Image%20CI/badge.svg)
 ![GitHub last commit](https://img.shields.io/github/last-commit/verbruggenalex/docker-php-theia)
-![Docker Pulls](https://img.shields.io/docker/pulls/verbral/docker-php-theia)
+![Docker Pulls](https://img.shields.io/docker/pulls/verbral/php-theia)
 
 # Docker PHP Theia
 
-![Theia](/theia-screenshot.png)
+![Theia](https://github.com/verbruggenalex/docker-php-theia/raw/master/theia-screenshot.png)
 
 ## About
 
@@ -24,9 +24,9 @@ docker pull docker.io/verbral/php-theia:7.4
 
 ### From Github
 ```bash
-docker pull docker.pkg.github.com/verbruggenalex/php-theia:7.2
-docker pull docker.pkg.github.com/verbruggenalex/php-theia:7.3
-docker pull docker.pkg.github.com/verbruggenalex/php-theia:7.4
+docker pull docker.pkg.github.com/verbruggenalex/docker-php-theia/php-theia:7.2
+docker pull docker.pkg.github.com/verbruggenalex/docker-php-theia/php-theia:7.3
+docker pull docker.pkg.github.com/verbruggenalex/docker-php-theia/php-theia:7.4
 ```
 
 ## Usage:
