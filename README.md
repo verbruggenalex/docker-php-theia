@@ -1,6 +1,6 @@
-![example workflow name](https://github.com/verbruggenalex/docker-theia-php/workflows/Docker%20Image%20CI/badge.svg)
-![GitHub last commit](https://img.shields.io/github/last-commit/verbruggenalex/docker-theia-php)
-![Docker Pulls](https://img.shields.io/docker/pulls/verbral/docker-theia-php)
+![example workflow name](https://github.com/verbruggenalex/docker-php-theia/workflows/Docker%20Image%20CI/badge.svg)
+![GitHub last commit](https://img.shields.io/github/last-commit/verbruggenalex/docker-php-theia)
+![Docker Pulls](https://img.shields.io/docker/pulls/verbral/docker-php-theia)
 
 # Docker Theia PHP
 
@@ -8,7 +8,7 @@
 
 ## About
 
-A Docker image based on [thecodingmachine/docker-images-php](https://github.com/thecodingmachine/docker-images-php#general-purpose-php-images-for-docker)
+A Docker image based on [thecodingmachine/php:7.x-v3-apache-node12](https://github.com/thecodingmachine/docker-images-php#general-purpose-php-images-for-docker)
 with addition of the browser based IDE [Theia](https://theia-ide.org/) set up
 for coding PHP. **This is not an official docker image!** Subject to change as
 it is used for personal development purposes.
@@ -17,16 +17,16 @@ it is used for personal development purposes.
 
 ### From Dockerhub
 ```bash
-docker pull docker.io/verbral/docker-theia-php:7.2
-docker pull docker.io/verbral/docker-theia-php:7.3
-docker pull docker.io/verbral/docker-theia-php:7.4
+docker pull docker.io/verbral/php-theia:7.2
+docker pull docker.io/verbral/php-theia:7.3
+docker pull docker.io/verbral/php-theia:7.4
 ```
 
 ### From Github
 ```bash
-docker pull docker.pkg.github.com/verbruggenalex/docker-theia-php/docker-theia-php:7.2
-docker pull docker.pkg.github.com/verbruggenalex/docker-theia-php/docker-theia-php:7.3
-docker pull docker.pkg.github.com/verbruggenalex/docker-theia-php/docker-theia-php:7.4
+docker pull docker.pkg.github.com/verbruggenalex/docker-php-theia/php-theia:7.2
+docker pull docker.pkg.github.com/verbruggenalex/docker-php-theia/php-theia:7.3
+docker pull docker.pkg.github.com/verbruggenalex/docker-php-theia/php-theia:7.4
 ```
 
 ## Usage:
@@ -38,7 +38,7 @@ docker pull docker.pkg.github.com/verbruggenalex/docker-theia-php/docker-theia-p
 version: '3'
 services:
   web:
-    image: verbral/docker-theia-php:7.4
+    image: verbral/php-theia:7.4
     working_dir: ${PWD}
     ports:
       - 80:80
@@ -70,7 +70,7 @@ available on port 3000.
 ## Development
 
 ```
-git clone git@github.com:verbruggenalex/docker-theia-php.git
-cd docker-theia-php
+git clone git@github.com:verbruggenalex/docker-php-theia.git
+cd docker-php-theia
 PHP_VERSION=7.4 docker-compose up -d --build
 ```
