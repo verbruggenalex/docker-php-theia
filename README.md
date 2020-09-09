@@ -24,9 +24,9 @@ docker pull docker.io/verbral/php-theia:7.4
 
 ### From Github
 ```bash
-docker pull docker.pkg.github.com/verbruggenalex/docker-php-theia/php-theia:7.2
-docker pull docker.pkg.github.com/verbruggenalex/docker-php-theia/php-theia:7.3
-docker pull docker.pkg.github.com/verbruggenalex/docker-php-theia/php-theia:7.4
+docker pull docker.pkg.github.com/verbruggenalex/php-theia:7.2
+docker pull docker.pkg.github.com/verbruggenalex/php-theia:7.3
+docker pull docker.pkg.github.com/verbruggenalex/php-theia:7.4
 ```
 
 ## Usage:
