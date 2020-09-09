@@ -4,7 +4,7 @@
 
 # Docker PHP Theia
 
-![Theia](https://github.com/verbruggenalex/docker-php-theia/raw/master/theia-screenshot.png)
+<img src="https://github.com/verbruggenalex/docker-php-theia/raw/master/theia-screenshot.png" alt="Theia" style="max-width:100%;" width="100%">
 
 ## About
 

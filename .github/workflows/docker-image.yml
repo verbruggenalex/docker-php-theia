@@ -43,3 +43,4 @@ jobs:
           user: verbral
           pass: ${{ secrets.DOCKER_PASSWORD }}
           slug: verbral/php-theia
+        if: matrix.php-version == '7.4'
