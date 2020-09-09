@@ -2,7 +2,7 @@
 ![GitHub last commit](https://img.shields.io/github/last-commit/verbruggenalex/docker-php-theia)
 ![Docker Pulls](https://img.shields.io/docker/pulls/verbral/docker-php-theia)
 
-# Docker Theia PHP
+# Docker PHP Theia
 
 ![Theia](/theia-screenshot.png)
 
