@@ -26,7 +26,7 @@ ENV HOME=/home/docker \
     SHELL=/bin/bash \
     USE_LOCAL_GIT=true \
     PHP_EXTENSION_XDEBUG=1 \
-    XDEBUG_CONFIG="idekey=cloud9ide remote_connect_back=0 remote_host=localhost" \
+    XDEBUG_CONFIG="idekey=theia remote_connect_back=0 remote_host=localhost" \
     PHP_EXTENSION_BLACKFIRE=1 \
     PHP_EXTENSION_GD=1 \
     PHP_INI_ERROR_REPORTING=E_ALL \

@@ -7,7 +7,7 @@ services:
       args:
         PHP_VERSION: ${PHP_VERSION:-7.4}
     ports:
-      - 80:80
+      - 81:80
       - 3000:3000
     environment:
       APACHE_DOCUMENT_ROOT: ${PWD}
