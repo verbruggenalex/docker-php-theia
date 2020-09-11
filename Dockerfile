@@ -9,7 +9,7 @@ ENV APACHE_DOCUMENT_ROOT=/var/www/html
 USER root
 
 RUN apt-get update && \
-    apt-get install -y make gcc g++ python wget mysql-client --no-install-recommends
+    apt-get install -y make gcc g++ python wget mysql-client rsync --no-install-recommends
 
 USER docker
 
