@@ -1,5 +1,5 @@
 # The PHP_EXTENSIONS ARG will apply to the "slim" image
-ARG PHP_EXTENSIONS="apcu mysqli opcache pdo_mysql zip soap"
+ARG PHP_EXTENSIONS="apcu gd mysqli opcache pdo_mysql zip soap"
 ARG PHP_VERSION=7.4
 
 FROM thecodingmachine/php:$PHP_VERSION-v3-apache-node12
