@@ -46,7 +46,7 @@ RUN yarn --pure-lockfile && \
 
 COPY --chown=docker:docker ./settings.json /home/docker/.theia/settings.json
 
-RUN echo '\n/usr/bin/keychain ~/.ssh/id_rsa\n.  ~/.keychain/$HOSTNAME-sh\n' >> ~/.bashrc
+RUN echo '\n/usr/bin/keychain --quiet ~/.ssh/id_rsa\n.  ~/.keychain/$HOSTNAME-sh\n' >> ~/.bashrc
 
 EXPOSE 3000
 
