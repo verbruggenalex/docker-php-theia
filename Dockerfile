@@ -46,6 +46,12 @@ RUN yarn --pure-lockfile && \
 
 COPY --chown=docker:docker ./settings.json /home/docker/.theia/settings.json
 
+RUN echo '\n\
+if [ -z "$SSH_AUTH_SOCK" ] ; then \n\
+    eval `ssh-agent` \n\
+    ssh-add \n\
+fi\n' >> ~/.bash_profile
+
 EXPOSE 3000
 
 ENV STARTUP_COMMAND_THEIA_1='[ -z "$GIT_USER_NAME" ] || git config --global user.name "$GIT_USER_NAME"'
