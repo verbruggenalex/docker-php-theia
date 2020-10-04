@@ -9,7 +9,7 @@ ENV APACHE_DOCUMENT_ROOT=/var/www/html
 USER root
 
 RUN apt-get update && \
-    apt-get install -y make gcc g++ python wget mysql-client rsync --no-install-recommends
+    apt-get install -y g++ gcc keychain make mysql-client python rsync wget --no-install-recommends
 
 USER docker
 
@@ -46,11 +46,7 @@ RUN yarn --pure-lockfile && \
 
 COPY --chown=docker:docker ./settings.json /home/docker/.theia/settings.json
 
-RUN echo '\n\
-if [ -z "$SSH_AUTH_SOCK" ] ; then \n\
-    eval `ssh-agent` \n\
-    ssh-add \n\
-fi\n' >> ~/.bash_profile
+RUN echo '\n/usr/bin/keychain ~/.ssh/id_rsa\n.  ~/.keychain/$HOSTNAME-sh\n' >> ~/.bashrc
 
 EXPOSE 3000
 
