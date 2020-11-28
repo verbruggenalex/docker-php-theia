@@ -51,5 +51,18 @@
   "html.format.enable": true,
   "html.format.wrapLineLength": 80,
   "editor.formatOnSaveTimeout": 2000,
-  "workbench.iconTheme": "theia-file-icons"
+  "workbench.iconTheme": "theia-file-icons",
+  "intelephense.files.exclude": [
+    "**/.git/**",
+    "**/.svn/**",
+    "**/.hg/**",
+    "**/CVS/**",
+    "**/.DS_Store/**",
+    "**/node_modules/**",
+    "**/bower_components/**",
+    "**/vendor/**/{Tests,tests}/**",
+    "**/.history/**",
+    "**/vendor/**/vendor/**",
+    "**/build/**"
+  ]
 }
