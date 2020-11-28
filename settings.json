@@ -60,9 +60,8 @@
     "**/.DS_Store/**",
     "**/node_modules/**",
     "**/bower_components/**",
-    "**/vendor/**/{Tests,tests}/**",
+    "**/vendor/**/{Test,test,Tests,tests}/**/*Test.php",
     "**/.history/**",
-    "**/vendor/**/vendor/**",
     "**/build/**"
   ]
 }
