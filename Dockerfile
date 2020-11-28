@@ -48,6 +48,12 @@ COPY --chown=docker:docker ./settings.json /home/docker/.theia/settings.json
 
 RUN echo '\n/usr/bin/keychain --quiet ~/.ssh/id_rsa\n.  ~/.keychain/$HOSTNAME-sh\n' >> ~/.bashrc
 
+COPY apache2/sites-available/* /etc/apache2/sites-available/
+RUN a2ensite web.conf
+RUN a2ensite production.conf
+RUN a2ensite pre-production.conf
+RUN a2ensite post-production.conf
+
 EXPOSE 3000
 
 ENV STARTUP_COMMAND_THEIA_1='[ -z "$GIT_USER_NAME" ] || git config --global user.name "$GIT_USER_NAME"'
