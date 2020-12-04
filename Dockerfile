@@ -8,14 +8,16 @@ ENV APACHE_DOCUMENT_ROOT=/var/www/html
 
 USER root
 
-RUN apt-get update && \
-    apt-get install -y g++ gcc keychain make mysql-client python rsync wget --no-install-recommends
+RUN apt-get update \
+ && apt-get install -y g++ gcc keychain make mysql-client python rsync wget --no-install-recommends
 
 COPY apache2/sites-available/* /etc/apache2/sites-available/
-RUN a2ensite web.conf
-RUN a2ensite production.conf
-RUN a2ensite pre-production.conf
-RUN a2ensite post-production.conf
+RUN a2ensite web.conf \
+ && a2ensite production.conf \
+ && a2ensite pre-production.conf \
+ && a2ensite post-production.conf
+
+RUN composer self-update --2
 
 USER docker
 
