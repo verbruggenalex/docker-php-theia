@@ -4,20 +4,28 @@ ARG PHP_VERSION=7.4
 
 FROM thecodingmachine/php:$PHP_VERSION-v3-apache-node12
 
-ENV APACHE_DOCUMENT_ROOT=/var/www/html
-
 USER root
 
 RUN apt-get update \
  && apt-get install -y g++ gcc keychain make mysql-client python rsync wget --no-install-recommends
 
 COPY apache2/sites-available/* /etc/apache2/sites-available/
-RUN a2ensite web.conf \
- && a2ensite production.conf \
- && a2ensite pre-production.conf \
- && a2ensite post-production.conf
+
+RUN a2ensite web.conf && \
+    a2ensite production.conf && \
+    a2ensite pre-production.conf && \
+    a2ensite post-production.conf
 
 RUN composer self-update --2
+
+ENV DOCKERVERSION=18.06.1-ce
+
+RUN curl -fsSLO https://download.docker.com/linux/static/stable/x86_64/docker-${DOCKERVERSION}.tgz && \
+    tar xzvf docker-${DOCKERVERSION}.tgz --strip 1 -C /usr/local/bin docker/docker && \
+    rm docker-${DOCKERVERSION}.tgz && \
+    usermod -aG docker docker && \
+    curl -L "https://github.com/docker/compose/releases/download/1.23.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose && \
+    chmod +x /usr/local/bin/docker-compose
 
 USER docker
 
@@ -29,7 +37,8 @@ ADD --chown=docker:docker plugins /home/docker/plugins
 
 ARG GITHUB_TOKEN
 
-ENV HOME=/home/docker \
+ENV APACHE_DOCUMENT_ROOT=/var/www/html \
+    HOME=/home/docker \
     THEIA_DEFAULT_PLUGINS=local-dir:/home/docker/plugins \
     SHELL=/bin/bash \
     USE_LOCAL_GIT=true \

@@ -18,6 +18,7 @@ services:
     volumes:
       - ${PWD}:${PWD}
       - ~/.ssh:/home/docker/.ssh
+      - /var/run/docker.sock:/var/run/docker.sock:ro
   mysql:
     image: mysql:5.7
     environment:
