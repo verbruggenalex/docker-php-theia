@@ -2,7 +2,7 @@
 ARG PHP_EXTENSIONS="apcu bcmath gd mysqli opcache pdo_mysql soap zip"
 ARG PHP_VERSION=7.4
 
-FROM thecodingmachine/php:$PHP_VERSION-v3-apache-node12
+FROM thecodingmachine/php:$PHP_VERSION-v4-apache-node12
 
 USER root
 
